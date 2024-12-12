@@ -1,0 +1,40 @@
+<graph id="Graph">
+  <version>1.0</version>
+  <node id="Read">
+    <operator>Read</operator>
+    <sources/>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <useAdvancedOptions>false</useAdvancedOptions>
+      <file>/data/wangfengmao_file/aipy/py/test/input/S1A_IW_SLC__1SDV_20220110T231926_20220110T231953_041405_04EC57_103E_interferogram_goldstein.dim</file>
+      <copyMetadata>true</copyMetadata>
+      <bandNames/>
+      <pixelRegion>0,0,6357,4193</pixelRegion>
+      <maskNames/>
+    </parameters>
+  </node>
+  <node id="SnaphuExport">
+    <operator>SnaphuExport</operator>
+    <sources>
+      <sourceProduct refid="Read"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <targetFolder>/data/wangfengmao_file/aipy/py/test/output/snaphu</targetFolder>
+      <statCostMode>DEFO</statCostMode>
+      <initMethod>MST</initMethod>
+      <numberOfTileRows>10</numberOfTileRows>
+      <numberOfTileCols>10</numberOfTileCols>
+      <numberOfProcessors>4</numberOfProcessors>
+      <rowOverlap>100</rowOverlap>
+      <colOverlap>100</colOverlap>
+      <tileCostThreshold>500</tileCostThreshold>
+    </parameters>
+  </node>
+  <applicationData id="Presentation">
+    <Description/>
+    <node id="Read">
+            <displayPosition x="37.0" y="134.0"/>
+    </node>
+    <node id="SnaphuExport">
+      <displayPosition x="107.0" y="134.0"/>
+    </node>
+  </applicationData>
